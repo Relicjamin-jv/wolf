@@ -3,6 +3,7 @@
 #include <chrono>
 #include <control/control.hpp>
 #include <core/docker.hpp>
+#include <core/kubernetes.hpp>
 #include <core/gstreamer.hpp>
 #include <csignal>
 #include <exceptions/exceptions.h>
@@ -451,6 +452,7 @@ void run() {
   streaming::init(); // Need to initialise gstreamer once
   control::init();   // Need to initialise enet once
   docker::init();    // Need to initialise libcurl once
+  kubernetes::init();
 
   auto runtime_dir = utils::get_env("XDG_RUNTIME_DIR", "/tmp/sockets");
   logs::log(logs::debug, "XDG_RUNTIME_DIR={}", runtime_dir);

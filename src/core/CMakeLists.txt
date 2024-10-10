@@ -10,6 +10,9 @@ target_link_libraries(wolf_core PUBLIC wolf::helpers)
 add_subdirectory(src/platforms/all/docker)
 target_link_libraries(wolf_core PUBLIC wolf::docker)
 
+add_subdirectory(src/platforms/all/kubernetes)
+target_link_libraries(wolf_core PUBLIC wolf::kubernetes)
+
 file(GLOB CORE_HEADERS CONFIGURE_DEPENDS src/core/*.hpp)
 set(CORE_SRC "")
 

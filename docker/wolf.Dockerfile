@@ -24,6 +24,8 @@ RUN apt-get update -y && \
     libudev-dev \
     libdrm-dev \
     libpci-dev \
+    libwebsockets-dev \
+    uncrustify \
     && rm -rf /var/lib/apt/lists/*
 
 ## Install Rust in order to build our custom compositor
